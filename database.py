@@ -10,7 +10,7 @@ db = client["ecommerce"]
 products_collection = db["products"]
 orders_collection = db["orders"]
 
-# Create indexes for query optimization
+# Create indexes
 products_collection.create_index([("name", "text")])
 products_collection.create_index([("price", 1)])
 orders_collection.create_index([("userId", 1)])
