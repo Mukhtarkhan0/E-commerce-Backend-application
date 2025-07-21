@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-MONGODB_URI = mongodb+srv://mukhtar:1234@hronetaskmk.risvnox.mongodb.net/?retryWrites=true&w=majority&appName=HROneTaskMK
+MONGODB_URI = os.getenv("MONGODB_URI")
 
 client = MongoClient(MONGODB_URI)
 db = client["ecommerce"]
