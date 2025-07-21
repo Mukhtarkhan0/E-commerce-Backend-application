@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from models import ProductCreate, ProductResponse, OrderCreate, OrderResponse, ProductListResponse, OrderListResponse, SizeItem, OrderItem, Pagination, ProductListItem, OrderListItem, ProductDetails
 from database import products_collection, orders_collection
 from typing import List, Optional
-from bson import ObjectId
+from bson.objectid import ObjectId  # Explicit import for ObjectId
 from datetime import datetime
 
 app = FastAPI()
@@ -60,7 +60,7 @@ async def list_orders(user_id: str, limit: int = 10, offset: int = 0):
     order_count = orders_collection.count_documents({"userId": {"$regex": f"^{user_id}$", "$options": "i"}})
     print(f"Orders count for {user_id}: {order_count}")
 
-    # Fetch orders with pagination
+    # Fetch orders with pagination without lookup
     query = {"userId": {"$regex": f"^{user_id}$", "$options": "i"}}
     total_count = orders_collection.count_documents(query)
     cursor = orders_collection.find(query).sort("_id").skip(offset).limit(limit)
