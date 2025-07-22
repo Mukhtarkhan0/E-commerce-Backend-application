@@ -20,8 +20,8 @@ The application includes the following key features:
 
 1. **Clone the Repository**
    ```bash
-   git clone <your-repo-url>
-   cd TaskBackend
+   git https://github.com/Mukhtarkhan0/E-commerce-Backend-application.git
+   cd E_Commerce_Backend
    ```
 
 2. **Set Up a Virtual Environment**
