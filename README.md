@@ -111,7 +111,7 @@ Task_backend/
 - **Response**: `201 Created`
   ```json
   {
-    "id": "some_mongo_id"
+    "id": "mongo_id"
   }
   ```
 
